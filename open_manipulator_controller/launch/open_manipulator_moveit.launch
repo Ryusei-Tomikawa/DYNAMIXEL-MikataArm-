@@ -13,7 +13,10 @@
 
   <!-- Given the published joint states, publish tf for the robot links -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
+
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+      <!-- <remap from="/joint_states" to="/mikata_arm/joint_states" />
+  </node> -->
 
   <!-- Run the main MoveIt executable -->
   <include file="$(find open_manipulator_moveit)/launch/move_group.launch" >

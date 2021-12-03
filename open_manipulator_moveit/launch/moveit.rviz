@@ -5,10 +5,7 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /MotionPlanning1
-        - /TF1
         - /TF1/Frames1
-        - /TF1/Frames1/gripper_link1
-        - /TF1/Frames1/gripper_link_sub1
       Splitter Ratio: 0.7425600290298462
     Tree Height: 411
   - Class: rviz/Help
@@ -235,54 +232,19 @@ Visualization Manager:
       Value: true
       Velocity_Scaling_Factor: 1
     - Class: rviz/TF
-      Enabled: true
+      Enabled: false
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        end_effector_link:
-          Value: true
-        gripper_link:
-          Value: true
-        gripper_link_sub:
-          Value: true
-        link1:
-          Value: true
-        link2:
-          Value: true
-        link3:
-          Value: true
-        link4:
-          Value: true
-        link5:
-          Value: true
-        link6:
-          Value: true
-        link7:
-          Value: true
-        world:
-          Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        world:
-          link1:
-            link2:
-              link3:
-                link4:
-                  link5:
-                    link6:
-                      link7:
-                        end_effector_link:
-                          {}
-                        gripper_link:
-                          {}
-                        gripper_link_sub:
-                          {}
+        {}
       Update Interval: 0
-      Value: true
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 229; 229; 229
@@ -299,25 +261,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 0.8567678928375244
+      Distance: 0.8084738254547119
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.1300775110721588
-        Y: 0.018618017435073853
-        Z: 2.086168251480558e-7
+        X: 0.0879649817943573
+        Y: 0.021530717611312866
+        Z: 1.1920985798496986e-7
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.42479678988456726
+      Pitch: 0.404796838760376
       Target Frame: world
       Value: XYOrbit (rviz)
-      Yaw: 0.7635712027549744
+      Yaw: 0.6985710263252258
     Saved: ~
 Window Geometry:
   Displays:

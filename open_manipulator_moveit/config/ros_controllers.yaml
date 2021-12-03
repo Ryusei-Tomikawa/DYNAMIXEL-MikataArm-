@@ -26,7 +26,7 @@ open_manipulator:
   controller_list:
     - name: arm_controller
       action_ns: follow_joint_trajectory
-      default: True
+      default: True 
       type: FollowJointTrajectory
       joints:
         - joint1
@@ -35,4 +35,4 @@ open_manipulator:
         - joint4
         - joint5
         - joint6
-#	- end_effector_joint
+	      - end_effector_joint

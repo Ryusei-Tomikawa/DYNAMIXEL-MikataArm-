@@ -16,7 +16,7 @@
 
   <group if="$(arg use_gazebo)">
     <include file="$(find open_manipulator_gazebo)/launch/open_manipulator_gazebo.launch">
-      <arg name="use_robot_name" value="$(arg use_robot_name)"/>
+      <!-- <arg name="use_robot_name" value="$(arg use_robot_name)"/> -->
       <arg name="paused" value="false"/>
     </include>
   </group>
@@ -37,6 +37,24 @@
       <param name="using_platform"       value="$(eval use_platform and not use_gazebo)"/>
       <param name="planning_group_name"  value="$(arg planning_group_name)"/>
       <param name="control_period"       value="$(arg control_period)"/>
+
+      <remap from="/mikata_arm/joint1_position/command" to="/joint1_position/command" />
+      <remap from="/mikata_arm/joint2_position/command" to="/joint2_position/command" />
+      <remap from="/mikata_arm/joint3_position/command" to="/joint3_position/command" />
+      <remap from="/mikata_arm/joint4_position/command" to="/joint4_position/command" />
+      <remap from="/mikata_arm/joint5_position/command" to="/joint5_position/command" />
+      <remap from="/mikata_arm/joint6_position/command" to="/joint6_position/command" />
+
+      <remap from="/mikata_arm/gripper_position/command" to="/gripper_position/command" />
+      <remap from="/mikata_arm/gripper/kinematics_pose" to="/gripper/kinematics_pose" />
+      <remap from="/mikata_arm/option" to="/option" />
+      <remap from="/mikata_arm/states" to="/states" />
+      <remap from="/mikata_arm/arm_controller/follow_joint_trajectory/cancel" to="/arm_controller/follow_joint_trajectory/cancel" />
+      <remap from="/mikata_arm/arm_controller/follow_joint_trajectory/feedback" to="/arm_controller/follow_joint_trajectory/feedback" />
+      <remap from="/mikata_arm/arm_controller/follow_joint_trajectory/goal" to="/arm_controller/follow_joint_trajectory/goal" />
+      <remap from="/mikata_arm/arm_controller/follow_joint_trajectory/result" to="/arm_controller/follow_joint_trajectory/result" />
+      <remap from="/mikata_arm/arm_controller/follow_joint_trajectory/status" to="/arm_controller/follow_joint_trajectory/status" />
+
   </node>
 
 </launch>
