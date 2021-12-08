@@ -1,4 +1,4 @@
-# mikata-arm
+# 概要
 mikata-armのROSパッケージ
 既存のmikata-armの6軸のパッケージ[Mikata-arm Ros パッケージ](https://github.com/ROBOTIS-JAPAN-GIT/open_manipulator/tree/dynamixel_6dof_mikata_arm)は
 Gazebo+Moveit!は可能だが、moveit_commanderを用いたプログラムを用いるとうまく動作しないことがわかった
