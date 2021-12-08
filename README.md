@@ -18,13 +18,15 @@ Gazebo+Moveit!は可能だが、moveit_commanderを用いたプログラムを�
 ```
 
 
- ```shell
+```shell
     $ cd ~/catkin_ws/src
     $ git clone https://github.com/Ryusei-Tomikawa/mikata-arm
     $ cd ..
     $ catkin build
- ```
+```
  
- これで一応環境開発は整うはず
- 
- # 
+これで一応環境開発は整うはず
+
+# 動作方法
+
+基本的にはOpen_manipulatorと同じなので。e-Manualを参考にするように[e-Manual](https://emanual.robotis.com/docs/en/platform/openmanipulator_x/quick_start_guide/)
