@@ -28,7 +28,7 @@ def gripper_open(posi):
   jp.joint_name.append('gripper')
   jp.position.append(posi)
   res = gripper('', jp, 0.0)
-  print('open')
+  print('Gripper open')
 
 # Min -0.7
 def gripper_close(posi):
@@ -36,7 +36,7 @@ def gripper_close(posi):
   jp.joint_name.append('gripper')
   jp.position.append(posi)
   res = gripper('', jp, 0.0)
-  print('close')
+  print('Gripper close')
 
 
 
