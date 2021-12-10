@@ -28,7 +28,7 @@ def gripper(posi):
   jp.joint_name.append('gripper')
   jp.position.append(posi)
   res = gripper('', jp, 0.0)
-  print('Gripper open')
+  print('Gripper Call')
 
 
 
