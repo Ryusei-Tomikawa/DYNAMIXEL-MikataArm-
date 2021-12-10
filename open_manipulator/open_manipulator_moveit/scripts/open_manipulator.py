@@ -22,21 +22,14 @@ def euler_to_quaternion(role, pitch, yaw):
 	return Quaternion(q[0], q[1], q[2], q[3])
 
 
-# Max 0.7
-def gripper_open(posi):
+# Max 0.7　Min　-0.7
+def gripper(posi):
 
   jp.joint_name.append('gripper')
   jp.position.append(posi)
   res = gripper('', jp, 0.0)
   print('Gripper open')
 
-# Min -0.7
-def gripper_close(posi):
-
-  jp.joint_name.append('gripper')
-  jp.position.append(posi)
-  res = gripper('', jp, 0.0)
-  print('Gripper close')
 
 
 
@@ -56,7 +49,7 @@ def main():
     arm.set_pose_reference_frame("world")
 
     rospy.loginfo("Gripper Init")
-    gripper_open(0.7)
+    gripper(0.7)
 
     rospy.sleep(3)
 
@@ -87,7 +80,7 @@ def main():
 
     rospy.sleep(3)
 
-    gripper_close(-0.7)
+    gripper(-0.7)
 
     # wait
     rospy.sleep(3.0)
