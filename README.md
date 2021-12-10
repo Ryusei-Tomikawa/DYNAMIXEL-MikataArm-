@@ -3,7 +3,7 @@ mikata-armのROSパッケージ
 既存のmikata-armの6軸のパッケージ[Mikata-arm Ros パッケージ](https://github.com/ROBOTIS-JAPAN-GIT/open_manipulator/tree/dynamixel_6dof_mikata_arm)は
 Gazebo+Moveit!は可能だが、moveit_commanderを用いたプログラムを用いるとうまく動作しないことがわかった
 
-よって、ここのリポジトリを用いることがシミュレーションでも実機環境でも動作可能にできるようにパッケージを変更した
+よって、ここのリポジトリを用いることで、シミュレーションでも実機環境でも動作可能にできるようにパッケージを変更した
 
 簡易的ではあるが、サンプルコードも入っているので実際に試してみると動作確認できると思われる
 
@@ -20,7 +20,7 @@ Gazebo+Moveit!は可能だが、moveit_commanderを用いたプログラムを�
 
 ```shell
     $ cd ~/catkin_ws/src
-    $ git clone https://github.com/Ryusei-Tomikawa/mikata-arm
+    $ git clone https://github.com/Ryusei-Tomikawa/DYNAMIXEL-MikataArm-
     $ cd ..
     $ catkin build
 ```
