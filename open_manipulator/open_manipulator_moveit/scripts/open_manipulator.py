@@ -4,7 +4,6 @@ import sys, math, copy
 import rospy, tf, geometry_msgs.msg
 
 import moveit_commander 
-#import MoveGroupCommander, RobotCommander
 from geometry_msgs.msg import Pose, Quaternion, PoseStamped
 from tf.transformations import quaternion_from_euler
 from open_manipulator_msgs.msg import JointPosition
@@ -46,13 +45,11 @@ def main():
     # configuration for moveit
     robot = moveit_commander.RobotCommander()
 
-    # group name is "arm" and "gripper"
     print("robot group:", robot.get_group_names())
     #group name
     arm = moveit_commander.MoveGroupCommander("arm")
     print("robot current state:", arm.get_current_joint_values())
     #joint name
-    print ("")
     print("arm joint name:", robot.get_joint_names("arm"))
     print ("")
 
