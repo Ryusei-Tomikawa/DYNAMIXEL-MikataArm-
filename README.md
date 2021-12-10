@@ -33,7 +33,6 @@ Gazebo+Moveit!は可能だが、moveit_commanderを用いたプログラムを�
 
 これはシミュレーション環境で行う場合のコマンドである
  ``` shell
-   $ sudo chmod 666 /dev/ttyUSB0
    $ roslaunch open_manipulator_controller open_manipulator_controller.launch use_gazebo:=true use_moveit:=true
  ```
  
