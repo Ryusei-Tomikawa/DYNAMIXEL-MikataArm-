@@ -1,0 +1,51 @@
+<launch>
+  <arg name="sample_duration"        default="0.010"/>
+  <arg name="debug"                  default="false" />
+  <arg name="use_robot_name"         default="mikata_arm"/>
+
+<!-- joint_statesがちゃんとでている状態でやってみること -->
+  <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
+  <include file="$(find open_manipulator_moveit)/launch/planning_context.launch" >
+    <arg name="load_robot_description" value="true"/>
+  </include>
+
+  <!-- <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher">
+    <param name="use_gui" value="true"/>
+    <param name="rate" value="50"/>
+  </node> -->
+
+   <!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" /> -->
+
+    <!-- start robot state publisher -->
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen">
+    <param name="publish_frequency" type="double" value="100.0" />
+    <param name="tf_prefix" type="string" value="" />
+  </node>
+
+  <!-- <rosparam file="$(find open_manipulator_controllers)/config/gravity_compensation_controller.yaml" command="load"/>
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" args="gravity_compensation_controller"/> -->
+  
+  <!-- <rosparam file="$(find open_manipulator_moveit)/config/open_manipulator_controllers.yaml" command="load"/>
+  <rosparam file="$(find open_manipulator_controller)/config/joint_state_controller.yaml" command="load"/>
+  <node name="controller_spawner" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="spawn joint_state_controller arm_controller"/> -->
+
+  <!-- <node name="arm_controller_spawner" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="spawn arm_controller"/>
+  <node name="gripper_controller_spawner" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="spawn gripper_controller"/> -->
+
+  <!-- Run the main MoveIt executable -->
+  <include file="$(find open_manipulator_moveit)/launch/move_group.launch">
+    <arg name="allow_trajectory_execution" value="true"/>
+    <arg name="fake_execution" value="false"/>
+    <arg name="info" value="false"/>
+    <arg name="debug" value="$(arg debug)"/>
+    <arg name="sample_duration" value="$(arg sample_duration)"/>
+  </include>
+
+  <!-- Run Rviz and load the default config to see the state of the move_group node -->
+  <include file="$(find open_manipulator_moveit)/launch/moveit_rviz.launch" >
+    <arg name="config" value="true"/>
+    <arg name="debug" value="$(arg debug)"/>
+  </include>
+
+</launch>
